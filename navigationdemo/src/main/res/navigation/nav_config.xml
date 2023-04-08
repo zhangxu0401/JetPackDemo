@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_config"
+    app:startDestination="@id/fragment_login">                                   <!--设置在Fragment容器内默认展示的fragment-->
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.github.navigationdemo.fragment.LoginFragment">         <!--设置fragment的ID,和fragment的路径。-->
+        <action
+            android:id="@+id/goto_forget"
+            app:destination="@id/fragment_forget" />                             <!--设置fragment跳转动作的id，和跳转页面的id。-->
+        <action
+            android:id="@+id/goto_register"
+            app:destination="@id/fragment_register" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_forget"
+        android:name="com.github.navigationdemo.fragment.ForgetPwdFragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.github.navigationdemo.fragment.RegisterFragment">
+
+    </fragment>
+</navigation>
