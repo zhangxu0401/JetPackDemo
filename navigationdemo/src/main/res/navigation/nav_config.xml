@@ -8,7 +8,9 @@
         android:name="com.github.navigationdemo.fragment.LoginFragment">         <!--设置fragment的ID,和fragment的路径。-->
         <action
             android:id="@+id/goto_forget"
-            app:destination="@id/fragment_forget" />                             <!--设置fragment跳转动作的id，和跳转页面的id。-->
+            app:destination="@id/fragment_forget"
+            app:popExitAnim="@anim/slide_from_left_to_right_out"
+            app:launchSingleTop="true"/>                             <!--设置fragment跳转动作的id，和跳转页面的id。-->
         <action
             android:id="@+id/goto_register"
             app:destination="@id/fragment_register" />
@@ -21,6 +23,7 @@
     <fragment
         android:id="@+id/fragment_register"
         android:name="com.github.navigationdemo.fragment.RegisterFragment">
-
+        <deepLink app:uri="myscheme://myhost/MyPath" />
     </fragment>
+
 </navigation>

@@ -23,6 +23,8 @@ class ForgetPwdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //此处为获取值并进行重现
+        val userName = arguments?.getString("userName") ?: ""
+        binding.tvGetArg.text="此处传过来的值为：${userName}"
     }
 }

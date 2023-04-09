@@ -12,11 +12,18 @@
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <Button
-        android:id="@+id/btn_goto_forget_pwd"
+        android:id="@+id/btn_nav_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="返回上一页"
+        android:text="使用NavUp返回"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btn_pop_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用PopBack返回"
         android:textSize="20sp" />
 
 </LinearLayout>

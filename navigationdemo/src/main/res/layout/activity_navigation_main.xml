@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NavigationMainActivity">
+    tools:context=".activity.NavigationMainActivity">
     <!--设置导航实现类，此处使用系统实现好的NavHostFragment
               设置导航的资源图-->
     <androidx.fragment.app.FragmentContainerView
