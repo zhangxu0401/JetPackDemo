@@ -19,10 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btn_goto_forget_pwd"
+        android:id="@+id/btn_goto_pre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="返回上一页"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_launcher"
+        android:transitionName="Pic"
+        />
 
 </LinearLayout>

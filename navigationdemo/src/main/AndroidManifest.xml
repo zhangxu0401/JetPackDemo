@@ -26,6 +26,7 @@
                     android:scheme="myscheme" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.AgreeMainActivity"/>
     </application>
 
 </manifest>

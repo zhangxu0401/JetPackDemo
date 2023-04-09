@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:text="注册账号(navigate())"
         android:textSize="20sp" />
+
     <Button
         android:id="@+id/btn_goto_forget_pwd"
         android:layout_width="match_parent"
@@ -33,11 +34,30 @@
         android:layout_height="wrap_content"
         android:text="注册账号(使用navOptions)"
         android:textSize="20sp" />
-<Button
+
+    <Button
         android:id="@+id/btn_navigation_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="使用navigationUp返回"
+        android:textSize="20sp" />
+    <ImageView
+        android:id="@+id/iv_needTrans"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher"
+        android:transitionName="Pic"/>
+    <Button
+        android:id="@+id/btn_share_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="共享元素fragment"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btn_share_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="共享元素Activity"
         android:textSize="20sp" />
 
 </LinearLayout>

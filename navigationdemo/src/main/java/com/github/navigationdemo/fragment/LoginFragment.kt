@@ -32,29 +32,39 @@ class LoginFragment : Fragment() {
             //获取导航控制器，并通过注册的nav_config资源，根据ActionID，进行跳转页面
             findNavController().navigate(R.id.goto_register)
         }
+        //使用Bundle进行跳转
         binding.btnGotoForgetPwd.setOnClickListener {
             //获取导航控制器，并通过注册的nav_config资源，根据ActionID，进行跳转页面
             //发送bundle
-
             findNavController().navigate(R.id.goto_forget, bundleOf("userName" to "加班狗"))
         }
+        //使用NavOption进行跳转
+        val navOption =
+            NavOptions.Builder().setPopExitAnim(R.anim.slide_from_left_to_right_out)
+                .setLaunchSingleTop(true)//类似于singleTop如果在栈顶，则不新建Fragment
+                .setPopUpTo(
+                    R.id.goto_register,//要跳转页面动作的ActionID
+                    inclusive = true,//表示是否也要弹出自己
+                    saveState = false//表示是否保存弹出内容的状态信息。
+                )
         binding.btnGotoRegister2.setOnClickListener {
-            val navOption =
-                NavOptions.Builder().setPopExitAnim(R.anim.slide_from_left_to_right_out)
-                    .setLaunchSingleTop(true)//类似于singleTop如果在栈顶，则不新建Fragment
-                    .setPopUpTo(
-                        R.id.goto_register,//要跳转页面动作的ActionID
-                        inclusive = true,//表示是否也要弹出自己
-                        saveState = false//表示是否保存弹出内容的状态信息。
-                    )
             findNavController().navigate(
                 R.id.goto_forget,
                 null,
                 navOption.build()
             )
         }
+        //返回上一页
         binding.btnNavigationUp.setOnClickListener{
             findNavController().navigateUp()
+        }
+
+        binding.btnShareFragment.setOnClickListener{
+            findNavController().navigate(R.id.goto_forget,
+            null,null,)
+        }
+        binding.btnShareActivity.setOnClickListener{
+
         }
 
     }
