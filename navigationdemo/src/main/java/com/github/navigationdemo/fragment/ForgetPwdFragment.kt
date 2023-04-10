@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.transition.TransitionInflater
+import com.github.navigationdemo.R
 import com.github.navigationdemo.databinding.FragmentForgetPwdBinding
 import com.github.navigationdemo.databinding.FragmentLoginBinding
 
@@ -20,6 +22,12 @@ class ForgetPwdFragment : Fragment() {
         return FragmentForgetPwdBinding.inflate(inflater).also {
             _binding=it
         }.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //共享元素，需要在onCreate里面写
+        TransitionInflater.from(requireContext()).inflateTransition(R.transition.trans_login_pic)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

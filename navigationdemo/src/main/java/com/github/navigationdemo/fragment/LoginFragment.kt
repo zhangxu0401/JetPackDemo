@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.navigateUp
 import com.github.navigationdemo.R
@@ -55,15 +57,18 @@ class LoginFragment : Fragment() {
             )
         }
         //返回上一页
-        binding.btnNavigationUp.setOnClickListener{
+        binding.btnNavigationUp.setOnClickListener {
             findNavController().navigateUp()
         }
-
-        binding.btnShareFragment.setOnClickListener{
-            findNavController().navigate(R.id.goto_forget,
-            null,null,)
+        //声明要共享的控件，还有两个fragment共享控件的传输ID
+        val navigatorExtras = FragmentNavigatorExtras(binding.ivNeedTrans to "Pic")
+        binding.btnShareFragment.setOnClickListener {
+            findNavController().navigate(
+                R.id.goto_forget,
+                null, null, navigatorExtras
+            )
         }
-        binding.btnShareActivity.setOnClickListener{
+        binding.btnShareActivity.setOnClickListener {
 
         }
 

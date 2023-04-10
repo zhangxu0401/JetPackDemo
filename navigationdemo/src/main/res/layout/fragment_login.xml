@@ -12,7 +12,12 @@
         android:layout_height="wrap_content"
         android:text="这里是登录页面"
         android:textSize="30sp" />
-
+    <ImageView
+        android:id="@+id/iv_needTrans"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher"
+        android:transitionName="Pic"/>
     <Button
         android:id="@+id/btn_goto_register"
         android:layout_width="match_parent"
@@ -41,12 +46,10 @@
         android:layout_height="wrap_content"
         android:text="使用navigationUp返回"
         android:textSize="20sp" />
-    <ImageView
-        android:id="@+id/iv_needTrans"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_launcher"
-        android:transitionName="Pic"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="共享功能"/>
     <Button
         android:id="@+id/btn_share_fragment"
         android:layout_width="match_parent"
