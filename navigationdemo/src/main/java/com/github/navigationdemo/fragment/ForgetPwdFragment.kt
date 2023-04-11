@@ -27,7 +27,8 @@ class ForgetPwdFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //共享元素，需要在onCreate里面写
-        TransitionInflater.from(requireContext()).inflateTransition(R.transition.trans_login_pic)
+        sharedElementEnterTransition=TransitionInflater.from(requireContext()).inflateTransition(R.transition.trans_login_pic)
+        sharedElementReturnTransition=TransitionInflater.from(requireContext()).inflateTransition(R.transition.trans_login_pic)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

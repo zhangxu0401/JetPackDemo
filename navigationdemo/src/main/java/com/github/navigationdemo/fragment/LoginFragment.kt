@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.os.bundleOf
+import androidx.navigation.ActivityNavigator
+import androidx.navigation.ActivityNavigatorExtras
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -19,8 +22,7 @@ class LoginFragment : Fragment() {
     var _binding: FragmentLoginBinding? = null
     val binding get() = _binding!!
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return FragmentLoginBinding.inflate(inflater).also {
             _binding = it
@@ -41,19 +43,16 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.goto_forget, bundleOf("userName" to "加班狗"))
         }
         //使用NavOption进行跳转
-        val navOption =
-            NavOptions.Builder().setPopExitAnim(R.anim.slide_from_left_to_right_out)
-                .setLaunchSingleTop(true)//类似于singleTop如果在栈顶，则不新建Fragment
-                .setPopUpTo(
-                    R.id.goto_register,//要跳转页面动作的ActionID
-                    inclusive = true,//表示是否也要弹出自己
-                    saveState = false//表示是否保存弹出内容的状态信息。
-                )
+        val navOption = NavOptions.Builder().setPopExitAnim(R.anim.slide_from_left_to_right_out)
+            .setLaunchSingleTop(true)//类似于singleTop如果在栈顶，则不新建Fragment
+            .setPopUpTo(
+                R.id.goto_register,//要跳转页面动作的ActionID
+                inclusive = true,//表示是否也要弹出自己
+                saveState = false//表示是否保存弹出内容的状态信息。
+            )
         binding.btnGotoRegister2.setOnClickListener {
             findNavController().navigate(
-                R.id.goto_forget,
-                null,
-                navOption.build()
+                R.id.goto_forget, null, navOption.build()
             )
         }
         //返回上一页
@@ -64,12 +63,17 @@ class LoginFragment : Fragment() {
         val navigatorExtras = FragmentNavigatorExtras(binding.ivNeedTrans to "Pic")
         binding.btnShareFragment.setOnClickListener {
             findNavController().navigate(
-                R.id.goto_forget,
-                null, null, navigatorExtras
+                R.id.goto_forget, null, null, navigatorExtras
             )
         }
+        //跳转Activity ，并共享元素
+        val pair = androidx.core.util.Pair<View, String>(binding.ivNeedTrans, "Pic")
+        val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+            requireActivity(), pair
+        )
+        val extras =ActivityNavigator.Extras.Builder().setActivityOptions(optionsCompat).build()
         binding.btnShareActivity.setOnClickListener {
-
+            findNavController().navigate(R.id.goto_agree_activity, null, null, extras)
         }
 
     }
