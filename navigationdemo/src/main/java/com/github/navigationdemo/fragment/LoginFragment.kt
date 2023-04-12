@@ -16,7 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.navigateUp
 import com.github.navigationdemo.R
 import com.github.navigationdemo.databinding.FragmentLoginBinding
-
+import android.util.Pair as UtilPair
 class LoginFragment : Fragment() {
 
     var _binding: FragmentLoginBinding? = null
@@ -60,19 +60,18 @@ class LoginFragment : Fragment() {
             findNavController().navigateUp()
         }
         //声明要共享的控件，还有两个fragment共享控件的传输ID
-        val navigatorExtras = FragmentNavigatorExtras(binding.ivNeedTrans to "Pic")
         binding.btnShareFragment.setOnClickListener {
+            val navigatorExtras = FragmentNavigatorExtras(binding.ivNeedTrans to "Pic")
             findNavController().navigate(
                 R.id.goto_forget, null, null, navigatorExtras
             )
         }
         //跳转Activity ，并共享元素
-        val pair = androidx.core.util.Pair<View, String>(binding.ivNeedTrans, "Pic")
-        val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
-            requireActivity(), pair
-        )
-        val extras =ActivityNavigator.Extras.Builder().setActivityOptions(optionsCompat).build()
         binding.btnShareActivity.setOnClickListener {
+            //需要注意extras和options的路径
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity(),
+                binding.ivNeedTrans,"Pic")//activity，共享控件，共享控件元素名称
+            val extras = ActivityNavigatorExtras(options)
             findNavController().navigate(R.id.goto_agree_activity, null, null, extras)
         }
 
