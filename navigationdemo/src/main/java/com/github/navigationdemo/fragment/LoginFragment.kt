@@ -74,6 +74,9 @@ class LoginFragment : Fragment() {
             val extras = ActivityNavigatorExtras(options)
             findNavController().navigate(R.id.goto_agree_activity, null, null, extras)
         }
+        binding.btnBottomNavActivity.setOnClickListener{
+            findNavController().navigate(R.id.goto_bottom_nav_activity)
+        }
 
     }
 }

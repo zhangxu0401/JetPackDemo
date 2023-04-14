@@ -16,6 +16,8 @@
             app:popExitAnim="@anim/slide_from_left_to_right_out" />
         <action android:id="@+id/goto_agree_activity"
             app:destination="@id/activity_agree"/>
+        <action android:id="@+id/goto_bottom_nav_activity"
+            app:destination="@id/activity_bottom_nav"/>
     </fragment>
     <fragment
         android:id="@+id/fragment_forget"
@@ -29,5 +31,7 @@
     </fragment>
     <activity android:id="@+id/activity_agree"
         android:name="com.github.navigationdemo.activity.AgreeMainActivity"/>
+    <activity android:id="@+id/activity_bottom_nav"
+        android:name="com.github.navigationdemo.bottom.BottomNavigationActivity"/>
 
 </navigation>

@@ -66,4 +66,10 @@
         android:src="@drawable/ic_launcher"
         android:transitionName="Pic"
         />
+    <Button
+        android:id="@+id/btn_bottom_nav_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转首页tab切换效果。"
+        android:textSize="20sp" />
 </LinearLayout>
