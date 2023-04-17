@@ -1,8 +1,8 @@
-package com.github.coroutinedemo
+package com.github.coroutinedemo.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.GlobalScope
+import com.github.coroutinedemo.R
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

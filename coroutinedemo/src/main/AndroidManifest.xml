@@ -8,7 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetPackDemo">
         <activity
-            android:name=".SecondActivity"
+            android:name=".activity.SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

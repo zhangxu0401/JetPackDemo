@@ -1,4 +1,4 @@
-package com.github.coroutinedemo
+package com.github.coroutinedemo.activity
 
 import android.content.Intent
 import android.os.AsyncTask
@@ -13,7 +13,7 @@ import kotlin.coroutines.*
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
-    var binding: ActivityMainBinding ?= null
+    var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         binding?.let {
-            it.btnNext.setOnClickListener{
-                startActivity(Intent(this@MainActivity,SecondActivity::class.java))
-        }
+            it.btnNext.setOnClickListener {
+                startActivity(Intent(this@MainActivity, SecondActivity::class.java))
+            }
         }
     }
 }
