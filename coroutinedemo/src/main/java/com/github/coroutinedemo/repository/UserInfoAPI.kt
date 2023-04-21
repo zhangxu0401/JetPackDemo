@@ -4,12 +4,8 @@ import kotlinx.coroutines.delay
 
 class API {
     companion object {
-        suspend fun requestAppVersion(s: String) :Int{
-            delay(1000)
-            return 2
-        }
-
         suspend fun requestUserInfo(s: String): String {
+            //使用delay模拟网络数据请求
             delay(1000)
             return "this is Net User info"
         }
